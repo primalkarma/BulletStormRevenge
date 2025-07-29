@@ -9,13 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                Text("Bullet Storm 🎮")
+                    .font(.title)
+                    .bold()
+                    .padding()
+                NavigationLink(destination: GameView()) {
+                    Text("Start Game")
+                        .bold()
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                }
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
